@@ -1,4 +1,4 @@
-package org.orange.rampup.servletstage;
+package org.orange.rampup.servletstage.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.orange.rampup.servletstage.employees.EmployeeDao;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

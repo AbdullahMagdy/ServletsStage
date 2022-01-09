@@ -7,36 +7,46 @@
 
 
 <servlet>
-
 <servlet-name>Register</servlet-name>
-<servlet-class>org.orange.rampup.servletstage.EmployeeServlet</servlet-class>
-
+<servlet-class>org.orange.rampup.servletstage.servlets.AddEmployee</servlet-class>
 </servlet>
 
 <servlet-mapping>
-
 <servlet-name>Register</servlet-name>
 <url-pattern>/register</url-pattern>
-
 </servlet-mapping>
 
 <servlet>
-
 <servlet-name>VIEW</servlet-name>
-<servlet-class>org.orange.rampup.servletstage.ViewEmployee</servlet-class>
-
+<servlet-class>org.orange.rampup.servletstage.servlets.ViewEmployee</servlet-class>
 </servlet>
 
 <servlet-mapping>
-
 <servlet-name>VIEW</servlet-name>
 <url-pattern>/view</url-pattern>
-
 </servlet-mapping>
 
 
+<servlet>
+<servlet-name>MODIFY</servlet-name>
+<servlet-class>org.orange.rampup.servletstage.servlets.UpdateEmployee</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>MODIFY</servlet-name>
+<url-pattern>/modify</url-pattern>
+</servlet-mapping>
 
 
+<servlet>
+<servlet-name>REMOVE</servlet-name>
+<servlet-class>org.orange.rampup.servletstage.servlets.DeleteEmployee</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>REMOVE</servlet-name>
+<url-pattern>/remove</url-pattern>
+</servlet-mapping>
 
 
 </web-app>

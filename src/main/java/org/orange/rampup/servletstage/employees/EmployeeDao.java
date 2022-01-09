@@ -1,4 +1,4 @@
-package org.orange.rampup.servletstage;
+package org.orange.rampup.servletstage.employees;
 
 
 import java.sql.Connection;
@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class EmployeeDao {
@@ -23,6 +22,7 @@ public class EmployeeDao {
     }
 
     private EmployeeDao(){
+    	
 
     }
 	
@@ -113,6 +113,49 @@ public class EmployeeDao {
         }
         
         return list;
+        
+    }
+    
+    
+    public PreparedStatement updateEmployee() throws ClassNotFoundException, SQLException {
+        String UPDATE_USERS_SQL = "update employee set emp_name = ?, date_birth = ?, gender = ? ,"
+        		+ "graduation_date = ? , department = ? , team = ? , manager = ?, gross_salary = ?,"
+        		+ "net_salary = ? , is_manager = ? where idnew_table = ?";
+
+        int result = 0;
+        ResultSet rs = null;
+        List<String> list = new ArrayList<String>();
+        
+        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        Connection connection = DriverManager
+                .getConnection("jdbc:mysql://localhost:3306/initial_db", "root", "Ab1pass;");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USERS_SQL);
+        	
+       
+        return preparedStatement;
+        
+    }
+    
+    public PreparedStatement deleteEmployee() throws ClassNotFoundException, SQLException {
+        String DELETE_USERS_SQL = "delete from employee where idnew_table = ?";
+
+        int result = 0;
+        ResultSet rs = null;
+        List<String> list = new ArrayList<String>();
+        
+        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        Connection connection = DriverManager
+                .getConnection("jdbc:mysql://localhost:3306/initial_db", "root", "Ab1pass;");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USERS_SQL);
+        	
+       
+        return preparedStatement;
         
     }
     

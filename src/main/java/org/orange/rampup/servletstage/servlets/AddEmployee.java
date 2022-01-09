@@ -1,8 +1,11 @@
-package org.orange.rampup.servletstage;
+package org.orange.rampup.servletstage.servlets;
 
 import java.io.IOException;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import org.orange.rampup.servletstage.employees.Employee;
+import org.orange.rampup.servletstage.employees.EmployeeDao;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -11,12 +14,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-
-public class EmployeeServlet extends HttpServlet {
+public class AddEmployee extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private EmployeeDao employeeDao = EmployeeDao.getInstance();
 
-    public EmployeeServlet(){
+    public AddEmployee(){
         super();
     }
 
